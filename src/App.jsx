@@ -1,18 +1,17 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Highlights from './components/Highlights'
-import VideoCarousal from './components/VideoCarousel.jsx'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Highlights from "./components/Highlights";
+import VideoCarousel from "./components/VideoCarousel";
 
 const App = () => {
   return (
-    <main className='bg-black'>
+    <main className="bg-black">
       <Navbar />
       <Hero />
       <Highlights />
-      <VideoCarousal />
-
+      <VideoCarousel />
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;
