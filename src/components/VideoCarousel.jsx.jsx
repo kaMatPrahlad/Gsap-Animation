@@ -1,9 +1,17 @@
-import React from 'react'
+import { highlightsSlides } from "../constants";
 
 const VideoCarousal = () => {
   return (
-    <div>VideoCarousal</div>
-  )
-}
+    <>
+      <div className="flex items-center">
+        {highlightsSlides.map((list, i) => {
+          <div key={list.id} id="Slider">
+            <div className="video-carousel_container"></div>
+          </div>;
+        })}
+      </div>
+    </>
+  );
+};
 
-export default VideoCarousal
+export default VideoCarousal;
