@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { hightlightsSlides } from "../constants";
+import { pauseImg, playImg, replayImg } from "../utils";
 
 const VideoCarousel = () => {
   const videoRef = useRef([]);
@@ -19,6 +20,9 @@ const VideoCarousel = () => {
   useEffect(() => {
     if (loadedData.length > 3) {
       if (!isPlaying) {
+        videoRef.current[videoId].pause();
+      } else {
+        startPlay && videoRef.current[videoId].play();
       }
     }
   });
@@ -48,7 +52,14 @@ const VideoCarousel = () => {
                   id="video"
                   playsInline={true}
                   preload="auto"
-                  muted={true}
+                  muted
+                  ref={(el) => (videoRef.current[i] = el)}
+                  onPlay={() => {
+                    setVideo((preVideo) => ({
+                      ...preVideo,
+                      isPlaying: true,
+                    }));
+                  }}
                 >
                   <source src={list.video} type="video/mp4" />
                 </video>
@@ -64,6 +75,28 @@ const VideoCarousel = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="relative flex-center mt-10">
+        <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
+          {videoRef.current.map((_, i) => (
+            <span
+              key={i}
+              ref={(el) => (videoRef.current[i] = el)}
+              className="mx-2 w-3 h-3 bg-gary-200 rounded-full relative cursor-pointer"
+            >
+              <span
+                className="absolute h-full w-full rounded-full"
+                ref={(el) => (videoRef.current[i] = el)}
+              ></span>
+            </span>
+          ))}
+        </div>
+        <button className="control-btn">
+          <img
+            src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg}
+            alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}
+          />
+        </button>
       </div>
     </>
   );
