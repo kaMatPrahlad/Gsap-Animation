@@ -15,6 +15,8 @@ const Model = () => {
   const camearControlSmall = useRef();
   const camearControlLarge = useRef();
 
+  const small=
+
   useGSAP(() => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
