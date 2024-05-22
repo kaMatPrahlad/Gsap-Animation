@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import React, { useState } from "react";
 import ModelView from "./ModelView";
+import gsap from "gsap";
 
 const Model = () => {
   const [size, setSize] = useState("small");
