@@ -11,6 +11,10 @@ const Model = () => {
     img: yellowImg,
   });
 
+  //Camera  control for teh model view
+  const camearControlSmall = useRef();
+  const camearControlLarge = useRef();
+
   useGSAP(() => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
