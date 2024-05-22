@@ -5,6 +5,12 @@ import gsap from "gsap";
 
 const Model = () => {
   const [size, setSize] = useState("small");
+  const [model, setModel] = useState({
+    title: "iphone 15 pro in Natural Titanium",
+    color: ["#8F8A81", "#FFE7B9", "#6F6C64"],
+    img: yellowImg,
+  });
+
   useGSAP(() => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
