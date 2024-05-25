@@ -1,4 +1,5 @@
-# Logs
+3
+iphone Logs
 logs
 *.log
 npm-debug.log*
@@ -25,3 +26,4 @@ dist-ssr
 
 # Sentry Config File
 .env.sentry-build-plugin
+src/components/iphone.jsx
