@@ -6,7 +6,6 @@ import Model from "./components/Model";
 import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 
-import * as Sentry from "@sentry/react";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -15,7 +14,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Highlights />
-      <VideoCarousel />
+      {/* <VideoCarousel /> */}
       <Model />
       <Features />
       <HowItWorks />
@@ -24,4 +23,4 @@ const App = () => {
   );
 };
 
-export default Sentry.withProfiler(App);
+export default App;
