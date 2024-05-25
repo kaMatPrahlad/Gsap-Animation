@@ -8,7 +8,7 @@ import {
 import * as THREE from "three";
 import Lights from "./Lights";
 import Loader from "./Loader";
-import Iphone from "./Iphone";
+import Iphone from "../components/Iphone";
 
 import { Suspense } from "react";
 
